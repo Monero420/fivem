@@ -1,18 +1,4 @@
 local plantedPlants = {}
-local isProcessing = false
-
--- Function to acquire the lock
-function AcquireLock()
-    while isProcessing do
-        Citizen.Wait(100) -- Wait until the lock is released
-    end
-    isProcessing = true
-end
-
--- Function to release the lock
-function ReleaseLock()
-    isProcessing = false
-end
 
 RegisterServerEvent('plantSeed')
 AddEventHandler('plantSeed', function(originX, originY, originZ)
@@ -21,7 +7,6 @@ AddEventHandler('plantSeed', function(originX, originY, originZ)
     local markerOffsetX = 1.0
 
     Citizen.CreateThread(function()
-        AcquireLock() -- Acquire the lock before modifying the table
 
         plantedPlants[plantID] = {
             id = plantID,
@@ -40,8 +25,6 @@ AddEventHandler('plantSeed', function(originX, originY, originZ)
             },
             object = CreateObject(GetHashKey('bkr_prop_weed_01_small_01a'), originX, originY, originZ, true, false, false),
         }
-
-        ReleaseLock() -- Release the lock after modifying the table
 
         print("Plant ID: " .. plantedPlants[plantID].object .. ", planted.")
 
