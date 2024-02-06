@@ -1,0 +1,76 @@
+@import url('https://fonts.cdnfonts.com/css/pricedown');
+
+body {
+    background: none !important;
+    color: #FFF;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+#moneyHUD {
+    position: absolute;
+    top: 0%;
+    left: 1%;
+    display: inline;
+}
+
+#cash {
+    color: #7cc07c;
+}
+
+#bank {
+    color: #b9e2bd;
+}
+
+.money {
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #000;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: 35px;
+}
+
+#inventoryWindow {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-color: dimgrey;
+    height: 340px;
+    width: 340px;
+    padding: 20px;
+    border: 2px solid #000;
+    display: none;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-size: 25px;
+    -webkit-text-stroke-width: 2px;
+}
+
+.item_marijuana {
+    background-image: url('img/inventory_marijuana.png');
+}
+
+.item_armor {
+    background-image: url('img/inventory_armor.png');
+}
+
+.item_parachute {
+    background-image: url('img/inventory_parachute.png');
+}
+
+.item_ammoBox {
+	background-image: url('img/inventory_ammoBox.png');
+}
+
+.itemSlot {
+    height: 64px;
+    width: 64px;
+    border: 2px solid #000;
+    float: left;
+}
+
+.amount {
+    position: relative;
+    top: 32px;
+    left: 35px;
+    font-size: 12px;
+    -webkit-text-stroke-width: 1px;
+}
